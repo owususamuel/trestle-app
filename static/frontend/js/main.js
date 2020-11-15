@@ -31,7 +31,7 @@ $(document).ready(function () {
      const video = document.getElementById("video");
 
 
-  $("#camera-upload").click(function () {
+  $("#ccamera-upload").click(function () {
     $(this).hide()
     $("#click").show()
     $("#reset-camera").show()
