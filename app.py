@@ -1,7 +1,10 @@
 
 import cv2
 from flask import Flask, request, render_template, jsonify
-from matplotlib import pyplot
+# from matplotlib import pyplot
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 from mtcnn import MTCNN
 
 app = Flask(__name__)
@@ -73,7 +76,7 @@ def upload_image():
     if file and allowed_file(file.filename):
 
         # load image from file
-        pixels = pyplot.imread(file)
+        pixels = plt.imread(file)
         # create the detector, using default weights
         detector = MTCNN()
         # detect faces in the image
